@@ -16,7 +16,9 @@ btn.addEventListener('click', () =>{
 	const tr = document.createElement('tr');
 	tr.innerHTML = `
 	<td>${itemName}</td>
+	 <td>${itemQty}</td>
 	<td>${itemPrice}</td>
+	 <td>${itemQty * itemPrice}</td>
 	`
 	tbody.appendChild(tr);
 	total.innerText = totalCost;
