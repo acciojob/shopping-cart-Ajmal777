@@ -1,5 +1,6 @@
 const name = document.getElementById('item-name-input');
 const price = document.getElementById('item-price-input');
+const qty = document.getElementById('item-qty-input');
 const btn = document.getElementById('add');
 const tbody = document.getElementById('table-tbody');
 const total = document.getElementById('total');
@@ -7,9 +8,11 @@ let totalCost = 0;
 btn.addEventListener('click', () =>{
 	const itemName = name.value;
 	const itemPrice = Number(price.value);
-	totalCost += itemPrice;
+	const itemQty = Number(qty.value);
+	totalCost += (itemPrice * itemQty);
 	name.value = '';
-	btn.value = '';
+	price.value = '';
+	qty.value = '';
 	const tr = document.createElement('tr');
 	tr.innerHTML = `
 	<td>${itemName}</td>
